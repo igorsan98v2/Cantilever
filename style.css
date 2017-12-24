@@ -1,0 +1,69 @@
+.calc-button{
+	transition: all 1s;
+   position: absolute;
+   width:6rem;
+   height:6rem;
+   line-height: 6em;
+   border: solid 1px rgb(120,120,120);
+   border-radius: 100%;
+   
+  /* background-color: rgb(180,180,180);
+  */
+   box-shadow: 3px 3px 15px rgba(180,180,180,0.5);
+   margin:1rem;
+   top: 75%;
+   left: 85%;
+   z-index: 1;
+   text-align: center;
+  
+}
+.calc-button:hover{
+	
+	
+	transition: all 1s;
+	background-color: orange;
+	box-shadow: 5px 5px 5px rgba(160,160,160,0.5);
+	color: white;
+	cursor: pointer; 
+}
+
+#context-menu{
+	top: 0px;
+	position:absolute;
+	border: solid 1px rgb(220,220,220);
+	border-radius:0.5rem;
+	z-index: 1;
+	margin-left:0px;
+	padding-left:0px;
+	left: 100px;
+	width: max-content;
+	display: none;
+	box-shadow:	0px 5px 5px rgba(160,160,160,0.5);
+
+}
+
+#context-menu>li{
+	padding:15px;
+	list-style-type: none ;
+	transition: all 0.2s;
+}
+
+#context-menu>li:hover{
+	transition: all 0.5s;
+	border-top:solid 1px white;
+	border-bottom:solid 1px white;;
+	background-color: orange;
+	color: white;
+	cursor: pointer;
+	box-shadow:	0px 3px 5px rgba(160,160,160,0.5);
+}
+#context-menu>li:first-child:hover{
+	border-radius:0.5rem 0.5rem 0rem 0rem;
+}
+#context-menu>li:last-child:hover{
+	border-radius:0rem 0rem 0.5rem 0.5rem;
+}
+canvas{
+    position: absolute;  
+     
+}
