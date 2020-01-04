@@ -1,0 +1,89 @@
+<html>
+<head>
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="file:///home/igor/node_modules/paper/dist/paper-full.js"></script>
+
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script type="text/paperscript" canvas="myCanvas">
+	var hitOptions = {
+		segments: true,
+		stroke: true,
+		fill: true,
+		closed:true,
+		tolerance: 5
+	};
+	var myPath = new Path();
+	
+	var wasCreated =false;
+	var msDownCount = 0;
+	var startPoint = new Path() ;
+	var endPoint = new Path();
+	myPath.strokeColor = 'black';
+	function pointInit(x,y,radius,color){
+		return {center:[x,y],radius:3,fillColor:color};	
+	}
+	
+	function onMouseDown(event){
+		
+		msDownCount++;
+		if(!wasCreated){
+			console.log("Hi it was"+event.point);
+			myPath.add(event.point.x,100);
+		
+			if(msDownCount==1){
+				pos=event.point.x;
+				startPoint = Path.Circle(pointInit(pos,100,3,"black"));	
+				
+			}
+			if(msDownCount==2){
+				wasCreated=true;
+				var field = queryLengthField();
+			//	console.log("h "+field.height+"w"+field.width );
+				field.style.top = 70  +"px";
+				
+				field.style.left = (pos-40 + event.point.x)/2 + "px";
+				endPoint = Path.Circle(pointInit(event.point.x,100,3,"black"));	
+				field.value = myPath.length;
+			
+				
+			//	myPath.scale(field.value/myPath.length);
+			//	myPath.selected = true;
+				
+			}
+			
+		
+
+			
+			
+		}
+		
+		else if(msDownCount>2){
+			
+			var field = queryLengthField();
+			console.log( myPath.curves[0].segment2.point);
+			myPath.curves[0].segment2.point.x = event.point.x;
+			field.value  = myPath.length;
+			console.log( myPath.curves[0].segment2.point.x- myPath.curves[0].segment1.point.x);
+			endPoint.setPosition([event.point.x,100]);
+			console.log(endPoint._position);
+			field.style.left = (pos-40 + event.point.x)/2 + "px";
+			console.log(project.hitTest(event.point));
+		}
+	}
+	
+	function queryLengthField(){
+		var field = document.querySelector("input");
+		return field;
+	}
+	
+</script>
+<meta charset="utf-8">
+</head>
+<body>
+	<canvas id="myCanvas" width="1000px" height="1000px" ></canvas>
+	<input type="text" name="LengthInput" value="">
+
+	</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</body>
+</html>

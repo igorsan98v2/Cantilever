@@ -3,7 +3,9 @@ class force{
         val = val ||null;
         this.coordFirstPoint = coordFirstPoint ;
         this.val = val;
-        this.coordF  = coordF.attrs.x||null;   
+        if(coordF!=undefined){
+            this.coordF  = coordF.attrs.x||null;
+        }   
     }
     get distanceFrom0(){
         return (this.coordF-this.coordFirstPoint);
@@ -42,7 +44,7 @@ class M extends force{
 
 class Calc{
     constructor(segments){
-
+     //   showHint(segments);
         let q = [];
         let m = [];
         let p = [];
@@ -113,7 +115,7 @@ class Calc{
         this.r[0].val = (sumM+sumP-sumQ)/(l2-l1);
         console.log("r0 "+this.r[0].val);
         console.log("r1 "+this.r[1].val);
-        console.log("check"+(this.r[0].val+this.r[1].val+this.p[0].val));
+     //   console.log("check"+(this.r[0].val+this.r[1].val+this.p[0].val));
         return this.r;
     }
     

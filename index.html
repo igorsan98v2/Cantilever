@@ -3,13 +3,13 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src ="Lb18.js"></script>
   <script src ="calculation.js"></script>
-  <script src="/home/igor/node_modules/konva/konva.js"></script>
-  <!--Удалите доп скобки '<!->' для того что бы программа работала -->
-  <!--Для первой строчки нужно распоковать папку konva -->
-   <!--Для второй строчки нужно иметь подключение к интернету  -->
-   <!--<script src="/konva/konva.js"></script>-->
-  <!--<script src="https://cdn.rawgit.com/konvajs/konva/1.7.6/konva.js"></script>-->
+  
+  <script src="http://cdn.rawgit.com/konvajs/konva/1.7.6/konva.js"></script>
+ 
+  <link rel="stylesheet" type="text/css" href="range.css">
+  <link rel="stylesheet" type="text/css" href="header.css">
   <meta charset="utf-8">
   <title>Konva Simple Line Demo</title>
   <style>
@@ -21,7 +21,54 @@
     }
   </style>
 </head>
-<body>
+<body scroll="yes">
+    <div class="top">
+      
+        <img src ="menu-btn.png" class="menu-btn">
+        <span>расчет балок
+        </span>
+          
+      
+    </div>
+   
+    <div id="grey_back">&nbsp;</div>
+    <header>
+      
+        <div class="shadower"></div>
+        <div class="falseHeader">
+          <div class="menuContainer">
+            <div class="menu">
+              <ul>
+                <li class="current">Расчет балки</li>
+                <li>Файл
+                  <ul class="subChoices">
+                    <li>Открыть</li>
+                    <li>Сохранить</li>
+                    <li>Печать</li>
+                    <li>Поделиться</li>
+                  </ul>
+                </li>
+                <li class="mob-file">Открыть</li>
+                <li class="mob-file">Сохранить</li>
+                <li class="mob-file">Печать</li>
+                <li class="mob-file">Поделиться</li>
+                <li class="mob-file" id="account">Учетная запись</li>
+                <li >Вход</li>
+                <li>Регистрация</li>
+                <li >
+                  <img width="36dp" height="36dp" src="identity_white.png" id="ident-pic">
+                  Имя
+                </li>
+              </ul>
+              
+            
+            </div>
+          </div>
+        </div>
+        <a class="mob-file" id="to-desktop" href="">
+            На полную версию сайта
+       </a>
+    </header>
   <div id="container"></div>
 
   <ul id=context-menu>
@@ -39,7 +86,40 @@
     
   </div>
   <script src="graphics.js">
-      
-     </script>
+    
+  </script>
+  <div  id="range-input" >
+      <input type="range" list="tickmarks" step="1" min ="1" max ="100">
+
+        <datalist id="tickmarks">
+          <option value="1" >
+          <option value="10">
+          <option value="20">
+          <option value="30">
+          <option value="40">
+          <option value="50">
+          <option value="60">
+          <option value="70">
+          <option value="80">
+          <option value="90">
+          <option value="100">
+        </datalist>
+      </input>
+      <div>
+          <span>В 1 cантиметре</span> 
+          <span></span>
+          <span>пикселей</span>
+      </div>
+     
+    </div>
+  <script src="jquery-3.3.1.min.js">
+  </script>
+  <script src="slider.js">
+  </script>
+  <script src="diagram.js">
+  </script>
+  <script src="header.js">
+  </script>
+  
 </body>
 </html>

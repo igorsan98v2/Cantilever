@@ -332,7 +332,12 @@ function refreshText(){
         if(segments[i].line!=null){
        
           length =  segments[i].line.attrs.points[2] - x ;
-          text ="l"+(i+1)+": " + length;
+          let val= Number(getSliderValue())
+         
+          if(!val){
+            val =1;
+          }
+          text ="l"+(i+1)+": " + (length/val).toFixed(2) +" cм";
           segments[i].line.text = makeText(text,x,y+10);
           textLayer.add( segments[i].line.text);
           addEdditing(segments[i].line.text,segments[i].line,"line",i);
@@ -425,7 +430,7 @@ function addEdditing(textNode,obj,type,index){
     // create textarea and style it
     var textarea = document.createElement('textarea');
     document.body.appendChild(textarea);
-    var varName  ;
+    var varName  ; 
     textarea.value = textNode.text();
     var varName = textarea.value.split(":")[0];  
     textarea.value = textarea.value.split(":")[1];  
@@ -444,7 +449,7 @@ function addEdditing(textNode,obj,type,index){
             if(type == "line"&&textarea.value>0){
               let points = obj.attrs.points;
               let delta = points[2]-points[0];
-              let val = Number(textarea.value);
+              let val = Number(textarea.value)*getSliderValue();
               let distLoad;
               let text;
               let isQ=false;
@@ -753,6 +758,7 @@ function calc(obj){
     obj.onclick = function(){
         var calc = new Calc(segments);
         var r = calc.calcR();
+     //   main(layer,segments,stage);
     //    segments[r[0].index].point.react.val = r[0].val;
         segments[r[0].index].point.text.text("r0: "+r[0].val.toFixed(2));
     //    segments[r[1].index].point.react.val = r[1].val;  

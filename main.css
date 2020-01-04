@@ -1,0 +1,212 @@
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+
+.container 		{ 
+  font-family:'Roboto';
+  margin-left: 15%;
+  margin-right: 20%;
+  width: auto;
+  background:#FFF;
+  /*padding:10px 15% 15%;*/
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+ 
+}
+header>h2{
+    color:#D72626;
+}
+h2 		 { 
+  text-align:center; 
+  margin-bottom:50px; 
+}
+h2 small { 
+  font-weight:normal; 
+  color:#888; 
+  display:block; 
+}
+
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+.group  label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#D72626;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative;
+   display:block; 
+   width:300px;
+ }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#D72626 ;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#D72626; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#D72626; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#D72626; }
+  to 	{ width:0; background:transparent; }
+}
+
+
+
+.rkmd-checkbox {
+  color: #818181;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
+}
+.rkmd-checkbox .input-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  vertical-align: -9px;
+}
+.rkmd-checkbox .input-checkbox input[type="checkbox"] {
+  visibility: hidden;
+  position: absolute;
+  left: 7px;
+  bottom: 7px;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.rkmd-checkbox .input-checkbox input[type="checkbox"] + .checkbox:before {
+  position: absolute;
+  left: 4px;
+  bottom: 8px;
+  width: 18px;
+  height: 18px;
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: -6px;
+}
+.rkmd-checkbox .input-checkbox input[type="checkbox"] + .checkbox:before {
+  content: "\e835";
+  color: #D72626;
+}
+.rkmd-checkbox .input-checkbox input[type="checkbox"]:checked + .checkbox:before {
+  content: "\e834";
+}
+
+.box {
+  position: absolute;
+  margin-top: 10%;
+  opacity: 1;
+  margin-left: 30%;
+  padding: 60px 50px 40px 50px;
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  z-index: 5;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+button{
+  background: #D72626;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  color: #fff;
+  border: 0;
+  font-family:'Roboto';
+  width: 125px;
+  height: 35px;
+  margin-top: 40px;
+  border-radius:3px;
+  font-size: 15px;
+}
+#cancel{
+  margin-left: 40px;
+}
+

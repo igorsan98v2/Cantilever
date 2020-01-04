@@ -1,0 +1,14 @@
+#range-input{
+	z-index: 2;
+	position: absolute;
+    height: 3rem;
+    width: 15rem;
+	
+	top: 15%;
+	left: 80%;
+
+}
+#range-input>input{
+    width: 15rem;
+    margin: 0;
+}

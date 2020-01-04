@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" type="text/css" href="main.css">
+            <link rel="stylesheet" type="text/css" href="dropdown.css">
+    </head>
+    <body>
+        <div class ="box">
+              
+                <div class="group" >      
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Логин</label>
+                </div>
+                <div class="group" >      
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>e-mail</label>
+                </div>
+
+
+                <div class="group" id="password">      
+                        <input type="password" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Пароль</label>
+                </div>
+                
+                       
+                <div id ="payment">
+                    <div class="dropdown">
+                        Тарифный план
+            
+                        <ul class="dropdown-content">
+                            <li>1 день</li>
+                            <li>1 неделя</li>
+                             <li>2 недели</li>
+                            <li>1 месяц</li>
+                        </ul>   
+                                           
+                    </div>
+                    <div class="dropdown"> 
+                           Cпособ оплаты 
+            
+                            <ul class="dropdown-content">
+                                <li>VISA/MasterCard</li>
+                                <li>XRP</li>
+                                <li>QIWI</li>
+                                
+                            </ul>   
+
+                    </div>
+                </div>
+                   
+                          
+                 
+                            
+                    
+                     
+                    
+                    <button  id="login">
+                        Подтвердить
+                    </button>
+                    <button  id="cancel">
+                        Отмена
+                    </button>
+                
+         </div>
+            <script src="dropdown.js"></script>
+    </body>
+
+</html>

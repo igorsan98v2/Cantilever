@@ -1,0 +1,228 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+@media only screen and (max-width:720px) , (orientation:portrait){
+  #range-input{
+    left: 20%;
+    width:120px;
+  }
+  .top{
+    width: 100%;
+    height: 30px;
+    background:#D72626;
+    color:#F0F0F0;
+    font-family: roboto;
+    text-transform: uppercase;
+ 
+  }
+  .top>span{
+    position: absolute;
+    padding-left:5px;
+    top:7px;
+  }
+  
+  header {
+    height:100%;  
+    width: 300px;
+    position:fixed;
+    background:#D72626;
+    top:0;
+    bottom:0;
+    left:-300px; 
+    z-index:9999;
+  } 
+  .subChoices{
+    display: none;
+  }
+  .menu_btn 
+  {
+    cursor: pointer;
+    left:0px;
+    margin-top: 16px;
+  }
+  header ul {
+    padding:0;
+    margin:0;
+    list-style:none;
+
+  } 
+  header ul li {
+    height:35px;
+    padding-left:10px;
+    line-height:35px;
+    font-family: roboto;
+    border-bottom: solid 1px #D01010;
+   
+    color: #E1E1E1;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  } 
+
+  header ul li:last-child{
+    padding-bottom: 20px;
+  }
+ #ident-pic{
+   position: relative;
+   top: 10px;
+ }
+
+  header li:first-child,header li:hover{
+    background-color: #F0F0F0;
+    box-shadow: 0 10px 7px rgba(0,0,0,0.52),
+    0 1px 2px rgba(0,0,0,0.24);
+    color:#D72626;
+  }
+  
+  header li:nth-child(2),#account {
+    box-shadow:0;
+    border: 0;
+    background-color:#b01010;
+    color: #b0b0b0;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.52),
+    0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  #grey_back {
+    display:none;
+    background-color:#000000;
+    opacity:0.7;
+    width:100%;
+    height:100%;
+    z-index:9998;
+    position:fixed;
+    top:0;
+  }
+  .subChoices{
+    height:280px;
+  }
+  #to-desktop{
+    color: floralwhite;
+    font-family: roboto;
+    position: relative;
+    top:30%;
+    left: 20%;
+  }
+  
+}
+@media only screen and (min-width: 720px){
+
+#to-desktop,.menu .mob-file,.menu-btn,#grey_back,.top{
+  display: none;
+}
+header{
+    z-index: 3;
+    position: absolute;
+    width: 100%; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12),
+     0 1px 2px rgba(0,0,0,0.24);
+}
+.shadower {
+    position: absolute;
+    
+    background: #D72626;
+ 
+    z-index: 4;
+  }
+
+  .falseHeader {
+    background: #D72626;
+    display: block;
+    position: relative;
+    
+    height: 80px;
+    width: 100%;
+    z-index: 4;
+    transition: height 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+
+
+
+.menuContainer {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    z-index: 3;
+  }
+  
+  .menu {
+    line-height: 100px;
+    transition: all 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+  }
+  .menu ul li {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    width: 200px;
+    height: 80px;
+    font-family: roboto;
+    color: #E1E1E1;
+    font-size: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .menu ul li:hover {
+    background: #fff;
+    color: #D72626;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1), 
+0 6px 6px rgba(0,0,0,0.1);
+  }
+  
+  .menu > ul > li .subChoices {
+    transform: translateY(-10%);
+    cursor-event: none;
+    width: 200px;
+    position: absolute;
+   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    opacity: 0;
+  }
+ 
+  .menu > ul > li:last-child {
+   
+    margin-left: 300px;
+  }
+ 
+#ident-pic{
+ 
+    transform: translateY(8px);
+  
+}
+  .menu > ul > li .subChoices li {
+    font-size: 15px;
+    line-height: 60px;
+    display: block;
+    width: 100%;
+    color: #D72626;
+    background: #fff;
+  }
+  .menu > ul > li .subChoices li:hover {
+    background: #D72626;
+    color: #E1E1E1;
+
+  }
+ 
+  .menu > ul > li:hover .subChoices {
+    transform: translate(0);
+    top: 80px;
+    opacity: 1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19),
+    0 6px 6px rgba(0,0,0,0.23);
+
+  }
+  
+  .menu .current {
+    background: #fff;
+    color: #D72626;
+  }
+  .menu .current .subChoices {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
